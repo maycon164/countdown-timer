@@ -1,0 +1,45 @@
+:root{
+  --LIGHT-RED: #DD6662
+}
+
+.message {
+  font-size: 16px;
+}
+
+.container-row-events{
+  width: 65vw;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+strong{
+  text-shadow: 5px 5px 5px red;
+
+}
+
+.row-event{
+  display: grid;
+  padding: 10px 20px 20px 20px;
+  align-items: center;
+  justify-content: center;
+  grid-template-areas: "t1 t2" "time time";
+  background-color: #DD6662;
+  margin: 5px 0px;
+}
+
+.t1{
+  grid-area: t1;
+}
+
+.t2{
+  grid-area: t2;
+}
+
+.time{
+  grid-area: time;
+  text-align: center;
+  transition: .1s;
+}
+.time:hover {
+  transform: scale(1.2);
+}

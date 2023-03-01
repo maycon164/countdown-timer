@@ -1,0 +1,82 @@
+:root {
+  --RED: #d95550;
+  --WHITE: #ffffff;
+  --PINK: pink;
+}
+.form-event {
+  width: 800px;
+  display: block;
+  margin: 0 auto;
+}
+.form-event > h1 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.form-event > * {
+  margin: 7px 2px;
+}
+
+.wrap-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+.wrap-input > label {
+  font-size: 18px;
+  flex-basis: 60px;
+}
+.wrap-input > input {
+  flex-basis: 300px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.btn-submit {
+  border: none;
+  padding: 10px 20px;
+  box-shadow: 0px 3px 1px var(--PINK);
+  display: block;
+  margin: 0 auto;
+  background-color: var(--WHITE);
+  border-radius: 5px;
+  font-size: 12px;
+  color: var(--RED);
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn-submit:hover {
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+.container-details-input{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.wrap-details-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrap-details-input > label {
+  font-size: 12px;
+}
+
+.wrap-details-input > input {
+  width: 50px;
+}
+
+.message {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+}
