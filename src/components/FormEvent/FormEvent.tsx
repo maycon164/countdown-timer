@@ -1,9 +1,11 @@
-import { useContext, useState } from 'react';
+import { FormEvent, useContext, useState } from 'react';
 import { CountdownContext, EventType } from '../../context/CountdownContext';
+import { InputTypeEvent } from './InputTypeEvent';
 import { getTimestamp } from '../../utils';
 import './style.css';
+import { TypeEvents } from './types';
 
-export const FormEvent = () => {
+export const FormEventComponent = () => {
   const [nameEvent, setNameEvent] = useState<string>('');
   const [dateEvent, setDateEvent] = useState<string>('');
   const [details, setDetails] = useState<{ hours: number, minutes: number }>({ hours: 0, minutes: 0 })
@@ -11,9 +13,11 @@ export const FormEvent = () => {
 
   const [validation, setValidation] = useState<{ valid: boolean, message: string }>({ valid: true, message: '' })
 
+  const [typeEvent, setTypeEvent] = useState<TypeEvents>('nintendo');
+
   const { addEvent } = useContext(CountdownContext);
 
-  function handleOnSubmit(e) {
+  function handleOnSubmit(e: FormEvent) {
     e.preventDefault();
 
     if (nameEvent == '') {
@@ -105,9 +109,26 @@ export const FormEvent = () => {
           </div>
         )}
 
+        {
+          moreDetails && (
+            <div className='wrap-input'>
+              <label htmlFor="type">Type:</label>
+              <InputTypeEvent type={typeEvent} />
+              <select name="type" id="type" onChange={e => setTypeEvent(e.target.value)}>
+                <option value="mpl">MPL</option>
+                <option value="nintendo">Nintendo Event</option>
+                <option value="champions">Champions League</option>
+                <option value="birthday">Birthday</option>
+              </select>
+            </div>
+          )
+        }
+
         <button className="btn-submit">Add Reminder</button>
         {validation.valid == false && (<p className='message'>👁👄👁💅 {validation.message}</p>)}
       </form>
     </>
   );
 };
+
+

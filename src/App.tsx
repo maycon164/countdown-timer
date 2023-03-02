@@ -1,7 +1,7 @@
 
 import { CountdownProvider } from './context/CountdownContext'
 import './App.css'
-import { FormEvent } from './components/FormEvent/FormEvent'
+import { FormEventComponent } from './components/FormEvent/FormEvent'
 import { ListEvents } from './components/ListEvents/ListEvents'
 import { ModalMessage } from './components/ModalMessage/ModalMessage'
 
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <h1>It's a Countdown App</h1>
       <CountdownProvider>
-        <FormEvent />
+        <FormEventComponent />
         <ListEvents />
       </CountdownProvider>
     </div>

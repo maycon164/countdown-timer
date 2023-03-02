@@ -25,6 +25,11 @@ strong{
   grid-template-areas: "t1 t2" "time time";
   background-color: #DD6662;
   margin: 5px 0px;
+  transition: .1s;
+}
+
+.row-event:hover{
+  transform: scale(1.1);
 }
 
 .t1{
@@ -38,8 +43,4 @@ strong{
 .time{
   grid-area: time;
   text-align: center;
-  transition: .1s;
-}
-.time:hover {
-  transform: scale(1.2);
 }
