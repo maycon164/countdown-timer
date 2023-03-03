@@ -40,7 +40,7 @@ export const RowEvent = ({ name, date, timestamp }: { name: string, date: string
   return (
     <div className='row-event'>
       <div className='t1'>
-        <p contentEditable={true} style={{ fontSize: "20px" }}><strong>{name}</strong></p>
+        <p contentEditable={true} style={{ fontSize: "20px" }} suppressContentEditableWarning={true}><strong>{name}</strong></p>
       </div>
       <div className='t2'>
         {formatDate(date)}

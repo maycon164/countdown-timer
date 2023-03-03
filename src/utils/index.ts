@@ -13,7 +13,6 @@ export function formatDate(date: string) {
 
 export function formatTimestamp(time: number) {
   const timeInSeconds = time / 1000;
-  console.log(timeInSeconds)
   const days = Math.floor(timeInSeconds / (3600 * 24))
   const hours = Math.floor(timeInSeconds % (3600 * 24) / 3600)
   const minutes = Math.floor(timeInSeconds % 3600 / 60);
