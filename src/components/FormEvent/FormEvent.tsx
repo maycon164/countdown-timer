@@ -1,9 +1,9 @@
-import { FormEvent, useContext, useState } from 'react';
-import { CountdownContext, EventType } from '../../context/CountdownContext';
+import { FormEvent, useContext, useRef, useState } from 'react';
+import { CountdownContext } from '../../context/CountdownContext';
 import { InputTypeEvent } from './InputTypeEvent';
 import { getTimestamp } from '../../utils';
-import './style.css';
 import { TypeEvents } from './types';
+import './style.css';
 
 export const FormEventComponent = () => {
   const [nameEvent, setNameEvent] = useState<string>('');
@@ -13,7 +13,7 @@ export const FormEventComponent = () => {
 
   const [validation, setValidation] = useState<{ valid: boolean, message: string }>({ valid: true, message: '' })
 
-  const [typeEvent, setTypeEvent] = useState<TypeEvents>('nintendo');
+  const [typeEvent, setTypeEvent] = useState<TypeEvents>('mpl');
 
   const { addEvent } = useContext(CountdownContext);
 
@@ -113,13 +113,18 @@ export const FormEventComponent = () => {
           moreDetails && (
             <div className='wrap-input'>
               <label htmlFor="type">Type:</label>
-              <InputTypeEvent type={typeEvent} />
-              <select name="type" id="type" onChange={e => setTypeEvent(e.target.value)}>
-                <option value="mpl">MPL</option>
-                <option value="nintendo">Nintendo Event</option>
-                <option value="champions">Champions League</option>
-                <option value="birthday">Birthday</option>
-              </select>
+              <div className='wrap-select'>
+
+                <InputTypeEvent type={typeEvent} />
+
+                <select name="type" id="type" onChange={e => setTypeEvent(e.target.value as TypeEvents)}>
+                  <option value="mpl">MPL</option>
+                  <option value="nintendo">Nintendo Event</option>
+                  <option value="champions">Champions League</option>
+                  <option value="birthday">Birthday</option>
+                </select>
+              </div>
+
             </div>
           )
         }

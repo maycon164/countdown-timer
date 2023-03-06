@@ -4,7 +4,6 @@ import championsLogo from '../../imgs/champions.png';
 import './style.css'
 import { TypeEvents } from './types';
 
-
 export const InputTypeEvent = ({ type }: { type: TypeEvents }) => {
 
     const inputItems = {
@@ -28,7 +27,7 @@ export const InputTypeEvent = ({ type }: { type: TypeEvents }) => {
 
     return (
 
-        < div className='select-event' >
+        < div className='select-event'>
             <img src={inputItems[type].logo} alt={inputItems[type].title} />
             <label htmlFor="">{inputItems[type].title}</label>
         </div >

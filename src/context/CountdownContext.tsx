@@ -26,7 +26,7 @@ export const CountdownProvider = ({ children }: PropsWithChildren<{}>) => {
     const previousEvents = localStorage.getItem('values');
     if (previousEvents) setListEvents(JSON.parse(previousEvents));
 
-  }, [listEvents])
+  }, [listEvents, setListEvents])
 
   function addEvent(event: Omit<EventType, 'id'>) {
     const verifyId = listEvents.find(
