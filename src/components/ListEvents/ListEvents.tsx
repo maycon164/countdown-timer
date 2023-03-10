@@ -14,7 +14,10 @@ export const ListEvents = () => {
         orderedEvents.length == 0 ? (
           <h1 className="message">You do not have Events Yet !!!</h1>
         ) : (
-          orderedEvents.map(event => <RowEvent remove={() => removeEvent(event.id)} name={event.name} date={event.date} timestamp={event.timestamp} key={event.id} />)
+          orderedEvents.map(event => <RowEvent remove={() => removeEvent(event.id)}
+            name={event.name} date={event.date} timestamp={event.timestamp} key={event.id}
+            typeEvent={event.type}
+          />)
         )
       }
     </div>

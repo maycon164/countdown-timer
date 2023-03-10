@@ -3,7 +3,6 @@ import { CountdownProvider } from './context/CountdownContext'
 import './App.css'
 import { FormEventComponent } from './components/FormEvent/FormEvent'
 import { ListEvents } from './components/ListEvents/ListEvents'
-import { ModalMessage } from './components/ModalMessage/ModalMessage'
 
 function App() {
 

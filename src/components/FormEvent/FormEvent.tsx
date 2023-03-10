@@ -1,5 +1,5 @@
 import { FormEvent, useContext, useRef, useState } from 'react';
-import { CountdownContext } from '../../context/CountdownContext';
+import { CountdownContext, EventType } from '../../context/CountdownContext';
 import { InputTypeEvent } from './InputTypeEvent';
 import { getTimestamp } from '../../utils';
 import { TypeEvents } from './types';
@@ -44,6 +44,7 @@ export const FormEventComponent = () => {
       name: nameEvent,
       date: dateEvent,
       timestamp: getTimestamp(dateEvent, details),
+      type: typeEvent
     };
 
     clearFields();

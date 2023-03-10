@@ -1,4 +1,5 @@
 import { createContext, PropsWithChildren, useEffect, useState } from 'react';
+import { TypeEvents } from '../components/FormEvent/types';
 
 export type EventType = {
   id: number;
@@ -8,7 +9,8 @@ export type EventType = {
   details?: {
     hours: number,
     minutes: number
-  }
+  };
+  type: TypeEvents
 };
 
 type CountdownContextType = {
