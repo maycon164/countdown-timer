@@ -26,14 +26,22 @@ strong{
   background-color: #DD6662;
   margin: 5px 0px;
   transition: .1s;
+  position: relative;
+  column-gap: 20px;
 }
 
 .row-event:hover{
   transform: scale(1.1);
 }
 
+.row-event:hover > .btn-remove {
+  display: block;
+}
+
 .t1{
   grid-area: t1;
+  text-align: left;
+  min-width: 400px;
 }
 
 .t2{
@@ -43,4 +51,20 @@ strong{
 .time{
   grid-area: time;
   text-align: center;
+}
+
+.btn-remove{
+  width: min-content;
+  color: white;
+  border: none;
+  background: none;
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+}
+
+.btn-remove:hover{
+  cursor: pointer;
 }

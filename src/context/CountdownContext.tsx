@@ -14,6 +14,7 @@ export type EventType = {
 type CountdownContextType = {
   readonly events: EventType[];
   addEvent: (event: EventType) => void;
+  removeEvent: (id: number) => void
 };
 
 export const CountdownContext = createContext<CountdownContextType>(undefined!);
@@ -47,9 +48,18 @@ export const CountdownProvider = ({ children }: PropsWithChildren<{}>) => {
     }
   }
 
+  function removeEvent(id: number) {
+    const newListEvents = listEvents.filter(event => event.id !== id)
+
+    setListEvents(newListEvents)
+
+    localStorage.setItem('values', JSON.stringify(newListEvents))
+  }
+
   return (
     <CountdownContext.Provider
       value={{
+        removeEvent,
         addEvent,
         events: listEvents,
       }}
