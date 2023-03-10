@@ -27,15 +27,25 @@ export const RowEvent = ({ name, date, timestamp }: { name: string, date: string
   const [validator, setValidator] = useState(false);
 
   useEffect(() => {
-    if (timestampRow <= 0) {
-      setValidator(true);
-    } else {
-      setTimeout(() => {
-        const currentTimestamp = Date.now();
-        setTimestamp(timestamp - currentTimestamp)
-      }, 1000)
-    }
-  })
+
+    const idInterval = setInterval(() => {
+      const currentTimestamp = Date.now();
+      console.log('every 1 second')
+
+      const newTimestampValue = timestamp - currentTimestamp;
+
+      if (newTimestampValue <= 0) {
+        console.log('stop validator')
+        setValidator(true)
+        clearInterval(idInterval)
+      }
+
+      setTimestamp(newTimestampValue)
+
+    }, 1000)
+
+    return (() => { clearInterval(idInterval) })
+  }, [])
 
   return (
     <div className='row-event'>
