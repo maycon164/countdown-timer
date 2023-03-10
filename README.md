@@ -13,6 +13,6 @@
 
 <h2>Screeenshots</h2>
 <p>Inital Screen</p>
-<img src="./src/imgs/screen-0.png" />
+<img src="./src/imgs/screen0.png" />
 <p>With Events</p>
-<img src="./src/imgs/screen-1.png">
+<img src="./src/imgs/screen1.png">
